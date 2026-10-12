@@ -1,0 +1,381 @@
+/* Athene TV Release Order — A4 landscape document styles */
+.ro-sheet {
+  --ro-maroon: #8a1c2b;
+  --ro-line: #b9b0b1;
+  position: relative;
+  width: 297mm;
+  min-height: 210mm;
+  padding: 9mm 10mm 6mm;
+  box-sizing: border-box;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 8.4pt;
+  line-height: 1.35;
+  overflow: hidden;
+}
+
+.ro-watermark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font: 800 150pt Tahoma, sans-serif;
+  color: rgba(138, 28, 43, 0.05);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.ro-sheet > *:not(.ro-watermark) {
+  position: relative;
+}
+
+.ro-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.ro-logo {
+  height: 12mm;
+  width: auto;
+}
+.ro-page {
+  color: #6b6b6b;
+  font-size: 8pt;
+}
+
+.ro-title {
+  text-align: center;
+  margin: -6mm 0 4mm;
+}
+.ro-title h1 {
+  color: var(--ro-maroon);
+  font: 700 21pt Tahoma, sans-serif;
+  margin: 0;
+}
+.ro-title h2 {
+  font: 700 12pt Tahoma, sans-serif;
+  margin: 1mm 0 0;
+}
+
+.ro-parties {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 6mm;
+  margin-bottom: 4mm;
+}
+.ro-parties p {
+  margin: 0;
+}
+.ro-state-label {
+  display: inline-block;
+  min-width: 34mm;
+}
+.ro-label {
+  display: block;
+  color: var(--ro-maroon);
+  font-weight: 700;
+  margin-bottom: 1mm;
+}
+.ro-parties strong {
+  display: block;
+  font-size: 9.2pt;
+}
+
+.ro-meta {
+  margin: 0;
+}
+.ro-meta-row {
+  display: grid;
+  grid-template-columns: 26mm 1fr;
+  align-items: baseline;
+  color: #4a4a4a;
+}
+.ro-meta-row dt {
+  margin: 0;
+}
+.ro-meta-row dd {
+  margin: 0;
+  color: #1a1a1a;
+  display: flex;
+  gap: 2mm;
+}
+.ro-meta-row dd i {
+  font-style: normal;
+  color: #4a4a4a;
+}
+.ro-meta-gap {
+  height: 3.5mm;
+}
+
+.ro-client {
+  margin-bottom: 2mm;
+}
+.ro-client-line {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+  line-height: 1.45;
+}
+.ro-client-line span {
+  display: inline-block;
+  min-width: 34mm;
+  color: #1a1a1a;
+  font-size: 9pt;
+  font-weight: 400;
+}
+.ro-client-line strong {
+  color: #1a1a1a;
+  font-size: 9pt;
+  font-weight: 400;
+}
+.ro-client-line em {
+  margin-left: auto;
+  font-style: normal;
+  color: #1a1a1a;
+  font-size: 9pt;
+}
+.ro-client-line b {
+  min-width: 32mm;
+  color: #1a1a1a;
+  font-size: 9pt;
+}
+
+.ro-salutation {
+  margin: 0 0 2mm;
+}
+
+.ro-schedule {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 6.4pt;
+}
+.ro-schedule th,
+.ro-schedule td {
+  border: 0.4pt solid var(--ro-line);
+  padding: 0.9mm 1mm;
+  text-align: center;
+}
+.ro-schedule thead th {
+  background: var(--ro-maroon);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.ro-schedule-title {
+  font-size: 7.6pt;
+}
+.ro-day {
+  width: 6.6mm;
+  padding: 0.4mm 0 !important;
+  line-height: 1.15;
+}
+.ro-day small {
+  display: block;
+  font-size: 6.4pt;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.ro-day b {
+  font-size: 8.4pt;
+}
+.ro-day-blank {
+  padding: 0 !important;
+  border-top: 0 !important;
+}
+.ro-col-program {
+  width: 22mm;
+}
+.ro-col-caption {
+  width: 30mm;
+}
+.ro-col-cost {
+  width: 22mm;
+}
+.ro-schedule tbody td {
+  background: #fdf8f8;
+  font-weight: 400;
+  vertical-align: middle;
+}
+.ro-center {
+  text-align: center;
+}
+.ro-right {
+  text-align: right;
+}
+.ro-total-row td {
+  font-weight: 700;
+  text-align: center;
+}
+.ro-total-row td:first-child {
+  text-align: center;
+}
+.ro-total-row td.ro-right {
+  text-align: right;
+}
+
+.ro-lower {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8mm;
+  margin-top: 4mm;
+}
+.ro-amount-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 9.4pt;
+  width: 100%;
+  max-width: 120mm;
+  margin-bottom: 1.5mm;
+}
+.ro-amount-line strong {
+  font-size: 10pt;
+}
+.ro-remarks-title {
+  font: 700 11.6pt Tahoma, sans-serif;
+  margin: 3mm 0 1mm;
+}
+.ro-remarks {
+  margin: 0;
+  font-size: 9.9pt;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.ro-tax {
+  width: 100%;
+  max-width: 120mm;
+  border-collapse: collapse;
+  font-size: 8.2pt;
+  margin: 3mm 0;
+}
+.ro-tax th,
+.ro-tax td {
+  border: 0.4pt solid var(--ro-line);
+  padding: 1.1mm 2mm;
+}
+.ro-tax th {
+  text-align: center;
+  font-weight: 700;
+  background: #1f4e78;
+  color: #fff;
+}
+.ro-payable-row {
+  display: grid;
+  grid-template-columns: 58mm 4mm 1fr;
+  align-items: baseline;
+  text-align: left;
+  font: 700 9pt Tahoma, sans-serif;
+  margin-top: 1mm;
+}
+.ro-payable-row > span {
+  text-align: left;
+}
+.ro-payable-row:first-of-type {
+  margin-top: 0;
+}
+.ro-payable-row i {
+  font-style: normal;
+}
+
+.ro-note {
+  text-align: center;
+  font-weight: 700;
+  font-size: 8.6pt;
+  margin: 6mm 0 0;
+}
+.ro-special-instruction .ro-note-label {
+  color: #000;
+}
+.ro-special-instruction .ro-note-text {
+  color: #ff0000;
+}
+.ro-footer {
+  position: absolute;
+  left: 10mm;
+  right: 10mm;
+  bottom: 5mm;
+  border-top: 0.4pt solid var(--ro-line);
+  padding-top: 2mm;
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 7.6pt;
+}
+.ro-footer strong {
+  color: var(--ro-maroon);
+}
+.ro-footer span {
+  color: #b0a8a9;
+  margin: 0 1mm;
+}
+
+/* Preview scaling inside the app */
+.ro-preview {
+  overflow: auto;
+  background: #eceaea;
+  padding: 14px;
+  border-radius: 8px;
+}
+.ro-preview-scale {
+  transform-origin: top left;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+  body * {
+    visibility: hidden !important;
+  }
+  .ro-print-root,
+  .ro-print-root * {
+    visibility: visible !important;
+  }
+  .ro-print-root {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  .ro-print-root .ro-preview,
+  .ro-print-root .ro-preview-scale {
+    all: unset !important;
+    display: block !important;
+  }
+  .ro-sheet {
+    box-shadow: none !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .ro-sheet:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
+
+/* Wizard controls */
+.ro-field-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:18px; }
+.ro-field { display:grid; gap:6px; }
+.ro-field > span { color:var(--muted-foreground); font-size:11px; }
+.ro-field input { min-height:36px; border:1px solid var(--border); border-radius:7px; padding:0 11px; background:var(--card); color:var(--foreground); font-size:12px; font-family:inherit; }
+.ro-field input:focus { outline:2px solid color-mix(in oklab, var(--primary) 40%, transparent); outline-offset:1px; }
+.ro-channel-list { border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+.ro-channel { display:flex; align-items:center; gap:12px; padding:12px 15px; border-bottom:1px solid var(--border); cursor:pointer; }
+.ro-channel:last-child { border-bottom:0; }
+.ro-channel:hover { background:color-mix(in oklab, var(--background) 55%, var(--card)); }
+.ro-channel-main { flex:1; min-width:0; }
+.ro-channel-main strong, .ro-channel-main small { display:block; }
+.ro-channel-main strong { font-size:12px; }
+.ro-channel-main small { color:var(--muted-foreground); font-size:10px; margin-top:3px; }
+.ro-alert { display:flex; gap:11px; margin-top:16px; padding:13px 15px; border-radius:7px; border:1px solid color-mix(in oklab, var(--primary) 35%, var(--border)); background:color-mix(in oklab, var(--primary) 7%, var(--card)); color:var(--primary); }
+.ro-alert.soft { border-color:color-mix(in oklab, var(--accent) 40%, var(--border)); background:color-mix(in oklab, var(--accent) 9%, var(--card)); color:oklch(0.51 0.1 76); }
+.ro-alert strong { font-size:12px; }
+.ro-alert p { margin:4px 0 0; color:var(--muted-foreground); font-size:11px; line-height:1.45; }
+.ro-preview .ro-sheet { box-shadow:0 8px 26px rgba(0,0,0,.16); margin-bottom:14px; }
+.wizard-step:disabled { opacity:.55; cursor:not-allowed; }
+.wizard-step { width:100%; text-align:left; background:transparent; border-right:0; border-top:0; border-bottom:0; cursor:pointer; }

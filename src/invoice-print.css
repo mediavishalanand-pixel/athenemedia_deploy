@@ -1,0 +1,90 @@
+/* Athene Tax Invoice — A4 landscape document styles */
+.inv-sheet {
+  font-size: 7.8pt;
+}
+.inv-parties {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 0.95fr;
+  gap: 6mm;
+  border-top: 1px solid var(--ro-line);
+  border-bottom: 1px solid var(--ro-line);
+  padding: 2.5mm 0;
+  margin-bottom: 3mm;
+}
+.inv-parties strong {
+  display: block;
+  text-transform: uppercase;
+  font-size: 8.4pt;
+  margin: 0.6mm 0;
+}
+.inv-parties p {
+  margin: 0.4mm 0;
+}
+.inv-schedule,
+.inv-summary,
+.inv-totals {
+  width: 100%;
+  border-collapse: collapse;
+}
+.inv-schedule th,
+.inv-schedule td,
+.inv-summary th,
+.inv-summary td {
+  border: 1px solid var(--ro-line);
+  padding: 1.1mm 1.4mm;
+  text-align: center;
+  vertical-align: middle;
+}
+.inv-schedule th,
+.inv-summary th {
+  background: #f3eceb;
+  color: var(--ro-maroon);
+  font-size: 7pt;
+  text-align: center;
+}
+.inv-schedule .inv-dates {
+  width: 62mm;
+  font-size: 6.8pt;
+}
+.inv-schedule .inv-cost,
+.inv-summary td.ro-right {
+  white-space: nowrap;
+}
+.inv-schedule-digital th,
+.inv-schedule-digital td {
+  text-align: center;
+  vertical-align: middle;
+}
+.inv-lower {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 7mm;
+  margin-top: 3.5mm;
+}
+.inv-lower h3 {
+  color: var(--ro-maroon);
+  font: 700 8pt Tahoma, sans-serif;
+  margin: 3mm 0 1.5mm;
+}
+.inv-lower h3:first-child {
+  margin-top: 0;
+}
+.inv-small {
+  margin: 0;
+  font-size: 7pt;
+  line-height: 1.45;
+}
+.inv-totals td {
+  border-bottom: 1px solid var(--ro-line);
+  padding: 1.1mm 1.4mm;
+}
+.inv-totals .inv-strong td {
+  font-weight: 700;
+  background: #f7f2f1;
+}
+.inv-sign {
+  margin-top: 5mm;
+  font-size: 7.4pt;
+  font-weight: 700;
+  text-align: right;
+}

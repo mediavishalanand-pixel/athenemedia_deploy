@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791187643906,
+      "tag": "0000_add_release_order_bill_received_status",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791190667740,
+      "tag": "0001_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791191745572,
+      "tag": "0002_fix_einvoice_delete_guard",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791350703210,
+      "tag": "0003_vendor_bill_uploads",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791453011360,
+      "tag": "0004_release_orders_multiple_bills",
+      "breakpoints": true
+    }
+  ]
+}
