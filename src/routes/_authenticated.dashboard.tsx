@@ -18,10 +18,13 @@ import {
   Trash2,
   Sparkles,
   Users,
+  UserCog,
   X,
   type LucideIcon,
 } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
+import { UserManagement } from "@/components/user-management";
+import { useIsAdmin } from "@/lib/use-is-admin";
 import {
   Bar,
   BarChart,
@@ -83,7 +86,8 @@ type View =
   | "Channel master"
   | "Master data"
   | "Recently deleted"
-  | "Company settings";
+  | "Company settings"
+  | "User management";
 
 const navGroups: Array<{
   group: string;
@@ -161,8 +165,20 @@ function AtheneApp() {
   const queryClient = useQueryClient();
   const [view, setView] = useState<View>("Dashboard");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isAdmin = useIsAdmin();
   const staffName = displayNameOf(user);
   const staffInitial = staffName.slice(0, 1).toUpperCase();
+
+  const effectiveNavGroups = useMemo(() => {
+    return navGroups.map((grp) => {
+      if (grp.group !== "Settings") return grp;
+      const items = [...grp.items];
+      if (isAdmin) {
+        items.push({ label: "User management", icon: UserCog });
+      }
+      return { ...grp, items };
+    });
+  }, [isAdmin]);
 
   const navigate = (next: View) => {
     setView(next);
@@ -193,7 +209,7 @@ function AtheneApp() {
 
         <div className="desk-label"><span className="signal-dot" /> PRODUCTION DESK <span className="desk-line" /></div>
         <nav className="nav-list" aria-label="Main navigation">
-          {navGroups.map(({ group, items }) => (
+          {effectiveNavGroups.map(({ group, items }) => (
             <div key={group || "root"} className="nav-group">
               {group && <span className="nav-group-label">{group}</span>}
               {items.map(({ label, icon: Icon, accent }) => (
@@ -232,6 +248,7 @@ function AtheneApp() {
           {view === "Manual RO" && <ManualReleaseOrder onBack={() => navigate("Release orders")} />}
           {view === "Proformas" && <ProformaList />}
           {view === "Invoices" && <InvoiceList />}
+          {view === "User management" && <UserManagement />}
         </div>
       </main>
     </div>

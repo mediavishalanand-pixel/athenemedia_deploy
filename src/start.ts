@@ -1,3 +1,7 @@
+if (typeof globalThis.WebSocket === "undefined") {
+  globalThis.WebSocket = class WebSocketDummy {} as unknown as typeof WebSocket;
+}
+
 import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";

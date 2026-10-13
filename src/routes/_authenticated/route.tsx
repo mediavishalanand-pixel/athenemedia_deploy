@@ -9,6 +9,10 @@ export const Route = createFileRoute("/_authenticated")({
     // expiring access tokens; only a missing/invalid session returns to sign-in.
     const { data, error } = await supabase.auth.getSession();
     if (error || !data.session) throw redirect({ to: "/auth" });
+    if (data.session.user.user_metadata?.["is_active"] === false) {
+      await supabase.auth.signOut();
+      throw redirect({ to: "/auth" });
+    }
     return { user: data.session.user };
   },
   component: () => <Outlet />,

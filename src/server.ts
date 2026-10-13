@@ -1,3 +1,7 @@
+if (typeof globalThis.WebSocket === "undefined") {
+  globalThis.WebSocket = class WebSocketDummy {} as unknown as typeof WebSocket;
+}
+
 import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
